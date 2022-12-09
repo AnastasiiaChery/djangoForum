@@ -1,0 +1,31 @@
+{% extends 'coments/new_publications.html' %}
+{% load static %}
+{% block content %}
+    <div class="full_block">
+    <div class = "publication">
+         <p>{{ post.text }}</p>
+        <img  src={% static post.image %} alt="Photo", class="img-responsive">
+
+         {% for i in post.topics.values %}
+        <p class="tag">{{i.name}}</p>
+
+        {% endfor %}
+        <p>{{ post.author}}</p>
+        <p>{{post_like}}</p>
+
+    </div>
+    <div class="comment">
+        {% for i in comment.values %}
+        <p>{{i.comment}}</p>
+        <p>{{i.comment_likes}}</p>
+    {% endfor %}
+
+    </div>
+
+
+    </div>
+
+
+    <a class="link" href="{% url 'new_publications' %}">Back</a>
+
+{% endblock %}

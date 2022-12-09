@@ -1,0 +1,26 @@
+{% block content %}
+   {% load static %}
+  <link  href="{% static 'blog.css' %}" rel="stylesheet">
+<h2>Register</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="form-registration">
+            {{form}}
+        </div>
+
+         <div class="submit-block">
+          <div class="submit-button">
+
+{#          <td>&nbsp;</td>#}
+         <input type="submit" value="Register">
+
+        </div>
+        </div>
+     </div>
+</form>
+
+<a class="link" href="{% url 'login' %}">Back to login</a>
+<a class="link" href="{% url 'home' %}">Back to Home</a>
+{% endblock %}

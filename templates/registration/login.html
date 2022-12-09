@@ -1,0 +1,28 @@
+{#{% block title %}Login{% endblock %}#}
+
+{% block content %}
+  {% load static %}
+  <link  href="{% static 'blog.css' %}" rel="stylesheet">
+
+    <div class="stripes-block">
+
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      <table>
+      <div class="form-group">
+        {{ form.as_p }}
+
+          <div class="submit-block">
+          <div class="submit-button">
+
+{#          <td>&nbsp;</td>#}
+          <input type="submit" value="Submit">
+
+        </div>
+        </div>
+      </table>
+    </form>
+    <a class="link" href="{% url 'new_publications' %}">Back to Home</a>
+    </div>
+{% endblock %}

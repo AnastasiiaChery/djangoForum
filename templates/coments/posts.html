@@ -1,0 +1,22 @@
+{% extends 'coments/new_publications.html' %}
+{% load static %}
+{% block content %}
+    <div class="head">
+    </div>
+
+{% for i in posts %}
+
+    <div class="post">
+    <tr class='success'>
+        <td>{{ i.text }}</td>
+        <img  src={% static i.image %} alt="Photo", class="img-responsive">
+        <td>{{ i.topics }}</td>
+        <td>{{ i.author}}</td>
+    </tr>
+    </div>
+    <a href="post/{{i.id }}" >View post</a>
+{% endfor %}
+    <div class="head">
+    </div>
+
+{% endblock %}

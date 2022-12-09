@@ -1,0 +1,35 @@
+
+html {
+  background-color: #f3fdf3;
+    top: 30%
+}
+
+/*div {*/
+/*    margin-top: 5%;*/
+/*    border: #8ea5bb;*/
+/*    margin-left: 20%;*/
+/*    margin-right: 20%;*/
+
+
+/*}*/
+
+/*div.td{*/
+/*  font-size: 30px;*/
+/*  font-family: Helvetica, Arial, sans-serif;*/
+/*}*/
+
+.head{
+  background: -webkit-linear-gradient(right, #E3612C 0, #E3612C 33.3%, #FCCE30 33.3%, #FCCE30 66.6%, #58554B 66.6%, #58554B) bottom no-repeat;
+   background: -o-linear-gradient(right, #E3612C 0, #E3612C 33.3%, #FCCE30 33.3%, #FCCE30 66.6%, #58554B 66.6%, #58554B) bottom no-repeat;
+   background: linear-gradient(to right, #E3612C 0, #E3612C 33.3%, #FCCE30 33.3%, #FCCE30 66.6%, #58554B 66.6%, #58554B) bottom no-repeat;
+   background-size: 100% 10px;
+   height:20px
+
+}
+
+.tag {
+    border: none;
+    height: 3px;
+    margin: 40px 0;
+    background-image: linear-gradient(to right, #FFF, #BFE2FF, #FFF);
+}
