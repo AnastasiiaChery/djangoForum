@@ -1,22 +1,51 @@
-{% extends 'coments/new_publications.html' %}
-{% load static %}
+{% extends 'coments/main_page.html' %}
 {% block content %}
+    {% load static %}
+    <link  href="{% static 'publication.css' %}" rel="stylesheet">
     <div class="head">
     </div>
 
-{% for i in posts %}
+ <div class="row">
 
-    <div class="post">
-    <tr class='success'>
-        <td>{{ i.text }}</td>
-        <img  src={% static i.image %} alt="Photo", class="img-responsive">
-        <td>{{ i.topics }}</td>
-        <td>{{ i.author}}</td>
-    </tr>
-    </div>
-    <a href="post/{{i.id }}" >View post</a>
-{% endfor %}
-    <div class="head">
+
+    <div class="leftcolumn">
+        {% for i in posts %}
+        <div class="card">
+
+        {% for j in i.topics.values %}
+        <a class="tag" href="filtered_post/{{j.name }}"> #{{j.name}} </a>
+        {% endfor %}
+
+        <div class="fakeimg1" style="height:400px">
+        <div class="box"><img  src={% static i.image %} alt="Photo", class="img-responsive" class="contain"/></div>
+        </div>
+        <p>{{ i.text }}</p>
+        <p>{{ i.author}}</p>
+            <a class="button_style" href="post/{{i.id }}" >View post</a>
+        </div>
+        {% endfor %}
     </div>
 
+
+
+
+    <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+
+</div>
 {% endblock %}

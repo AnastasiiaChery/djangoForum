@@ -1,0 +1,164 @@
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+.row{
+  display: flex;
+  align-items: stretch;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  /*float: left;*/
+  width: 75%;
+
+}
+
+/* Right column */
+.rightcolumn {
+/*  float: left;*/
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px 0px 20px ;
+  /*margin-left: 20px;*/
+}
+
+.fakeimg1 {
+  width: 100%;
+  padding: 20px 0px 20px ;
+  /*margin-left: 20px;*/
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+
+}
+
+.box {
+  margin-right: 10px;
+  width: 100%;
+  height: 400px;
+
+
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+}
+
+/*.contain {*/
+/*  object-fit: contain;*/
+/*}*/
+
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.button_style{
+    background-color: #555555; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button_style_back{
+    margin-left: 10%;
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button_style_delete{
+    margin-left: 80%;
+    background-color: #591818;
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.tag{
+  display: table;
+  width: auto;
+  margin: 0 auto;
+  padding: 15px;
+  letter-spacing: 2px;
+  background: #c8cfd9;
+  border: 2px dashed white;
+  color: white;
+  box-shadow: 0 0 0 4px #c8cfd9;
+}
+
+.form-group {
+    margin-left: 40%;
+    width: 100%;
+    /*text-align: center;*/
+    /*display: */
+   /*margin-bottom: 20px;*/
+   /*!*padding: 10px;*!*/
+   /*padding: 30%;*/
+
+}
+.form-group input, .form-group label, .form-group textarea {
+   width: 30%;
+
+}
+.form-group input {
+   padding: 0;
+   line-height: 50px;
+   border-width: 0;
+
+}

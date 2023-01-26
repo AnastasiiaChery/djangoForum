@@ -8,8 +8,8 @@ class Topics(models.Model):
 
 class Publication(models.Model):
     text = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='images/')
-    topics = models.ManyToManyField(Topics)
+    image = models.ImageField(upload_to='images/', blank=True)
+    topics = models.ManyToManyField(Topics, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
