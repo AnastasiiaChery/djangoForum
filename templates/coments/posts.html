@@ -21,7 +21,7 @@
         </div>
         <p>{{ i.text }}</p>
         <p>{{ i.author}}</p>
-            <a class="button_style" href="post/{{i.id }}" >View post</a>
+        {% if user.is_authenticated %}  <a class="button_style" href="post/{{i.id }}" >View post</a> {% endif %}
         </div>
         {% endfor %}
     </div>
@@ -31,16 +31,31 @@
 
     <div class="rightcolumn">
     <div class="card">
-      <h2>About Me</h2>
-      <div class="fakeimg" style="height:100px;">Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <h2><p>Hello, {{ user.username|default:'Guest' }}</p></h2>
+{#      <div class="fakeimg" style="height:100px;">Image</div>#}
+          <div class="link">
+      {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">Logout</a>
+
+      {% else %}
+          <a href="{% url 'signup' %}">Sign Up </a>
+          <a  href="{% url 'login' %}">Login </a>
+      {% endif %}
+  </div>
     </div>
+
+
     <div class="card">
-      <h3>Popular Post</h3>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div><br>
-      <div class="fakeimg">Image</div>
+      <h3>Analyze image</h3>
+        <div class="submit-block">
+        <div class="submit-button">
+            <a class="button_style_back" href="{% url 'upload_image' %}">Go to analyze image</a>
+        </div>
+        </div>
+
     </div>
+
+
     <div class="card">
       <h3>Follow Me</h3>
       <p>Some text..</p>

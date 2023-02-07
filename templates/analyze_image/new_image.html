@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     {% load static %}
-      <link  href="{% static 'publication.css' %}" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<a class="button_style_back" href="{% url 'new_publications' %}">Back</a>
+    {% load static %}
+    <link  href="{% static 'publication.css' %}" rel="stylesheet">
 
 <form enctype="multipart/form-data", method="POST">
     {% csrf_token %}
 <div class="form-group">
     <table>
-    <p class = "not-visible">{{form.post}} {{form.author}}</p>
-        <p>Topics:  {{form.topics}}</p>
+
         <p>Image:  {{form.image}}</p>
-        <p>Text: {{form.text}}</p>
+
     </table>
         <div class="submit-block">
         <div class="submit-button">
-          <input class="button_style" type="submit" value="Added new post">
+          <input class="button_style" type="submit" value="Analyze image">
         </div>
         </div>
     </div>

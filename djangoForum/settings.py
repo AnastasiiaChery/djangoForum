@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djangoForum',
     'users',
-    'publications'
+    'publications',
+    'analyze_image'
 ]
 
 MIDDLEWARE = [

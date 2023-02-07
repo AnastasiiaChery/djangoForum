@@ -21,11 +21,19 @@ from . import views
 
 urlpatterns = [
     path('', views.get_publications, name="new_publications"),
+
     path('post/<int:number>', views.find_publication, name="new_publications"),
     path('post/delete/<int:number>', views.delete_publication, name="new_publications"),
+    path('post/like/<int:number>', views.like_publication, name="new_publications"),
+    path('post/like_comment/<int:number>', views.like_comment, name="new_publications"),
+
     path('filtered_post/<str:string>', views.get_publications_topic, name="new_publications"),
+
     path('filtered_post/post/<int:number>', views.find_publication, name="new_publications"),
     path('filtered_post/post/delete/<int:number>', views.find_publication, name="new_publications"),
+    path('filtered_post/post/like/<int:number>', views.like_publication, name="new_publications"),
+    path('filtered_post/post/like_comment/<int:number>', views.like_comment, name="new_publications"),
+
     path('added/', views.add_publication, name="new_page")
 
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

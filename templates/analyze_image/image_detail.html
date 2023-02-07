@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% load static %}
+    <link  href="{% static 'publication.css' %}" rel="stylesheet">
+    <div class="card-detail">
+
+    <div class="full_block">
+    <div class = "publication">
+
+        <p class = "image_block"><img  class = "photo" src={% static image_detail.image %} alt="Photo", class="img-responsive"></p>
+        <a class="button_style_delete" href="./delete/{{image.id }}" >Delete image</a>
+
+
+    <form enctype="multipart/form-data", method="POST">
+    {% csrf_token %}
+        <div class="form-group">
+            <table>
+            {% for key, value in detail.items %}
+                <p>{{key }} : {{ value }}</p>
+            {% endfor %}
+
+        </table>
+
+        </div>
+    </form>
+
+    </div>
+    </div>
+    </div>
+    <a class="button_style_back" href="{% url 'upload_image' %}">Back</a>
+</body>
+</html>

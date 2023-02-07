@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% load static %}
+    <link  href="{% static 'publication.css' %}" rel="stylesheet">
+    <form enctype="multipart/form-data", method="POST">
+    {% csrf_token %}
+<div class="form-group">
+    <table>
+
+        <p>Image:  {{form.image}}</p>
+
+    </table>
+        <div class="submit-block">
+        <div class="submit-button">
+          <input class="button_style" type="submit" value="Analyze image">
+        </div>
+        </div>
+    </div>
+    </form>
+
+    <div class="card-detail">
+    <h2>Previous images</h2>
+
+    <div class="full_block">
+    <div class = "publication">
+      {% for i in images %}
+          <div class="img_box"><a href="detail/{{i.id }}"><img  src={% static i.image %} alt="Photo", class="img-responsive" class="contain"/></a></div>
+      {% endfor %}
+
+
+    </div>
+    </div>
+    </div>
+
+    <a class="button_style_back" href="{% url 'new_publications' %}">Go to blog</a>
+</body>
+</html>
