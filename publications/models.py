@@ -20,12 +20,6 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=User)
 
 
-
 class PostLike(models.Model):
     author = models.ManyToManyField(User)
     like_post = models.ManyToManyField(Publication)
-
-class CommentLike(models.Model):
-    author = models.ManyToManyField(User)
-    like_comment = models.ManyToManyField(Comment)
-

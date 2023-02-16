@@ -3,8 +3,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 
 from analyze_image.models import ImageAnalyze
-from publications.models import Topics, Publication, Comment, PostLike, CommentLike
-
+from publications.models import Topics, Publication, Comment, PostLike
 
 @admin.register(Topics)
 class PersonAdmin(admin.ModelAdmin):
@@ -18,10 +17,6 @@ class GradeAdmin(admin.ModelAdmin):
 @admin.register(PostLike)
 class CourseAdmin(admin.ModelAdmin):
     pass
-@admin.register(CommentLike)
-class GradeAdmin(admin.ModelAdmin):
-    pass
-
 @admin.register(ImageAnalyze)
 class GradeAdmin(admin.ModelAdmin):
     pass

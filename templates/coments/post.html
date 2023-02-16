@@ -3,61 +3,47 @@
     {% load static %}
     <link  href="{% static 'publication.css' %}" rel="stylesheet">
     <div class="card-detail">
+        <div class="full_block">
+            <div class = "publication">
+                <p>{{ post.text }}</p>
+                <p class = "image_block"><img  class = "photo" src={% static post.image %} alt="Photo", class="img-responsive"></p>
 
-    <div class="full_block">
-    <div class = "publication">
-         <p>{{ post.text }}</p>
-    <p class = "image_block"><img  class = "photo" src={% static post.image %} alt="Photo", class="img-responsive"></p>
+                {% for i in post.topics.values %}
+                    <p class="tag">{{i.name}}</p>
+                {% endfor %}
+                <p>{{ post.author}}</p>
 
-         {% for i in post.topics.values %}
-        <p class="tag">{{i.name}}</p>
+                <div class="under-publication">
+                    <div class="like">
+                        <a id="heart" href="like/{{post.id }}"></a>
+                        <p>{{post_like}}</p>
+                    </div>
+                    <a class="button_style_delete" href="delete/{{post.id }}" >Delete post</a>
+                </div>
 
-        {% endfor %}
-        <p>{{ post.author}}</p>
+            {% for i in comment.values %}
+             <div class="comment">
+                <p>{{i.comment}}</p>
+            </div>
+            {% endfor %}
 
-    <div class="under-publication">
-        <div class="like">
-             <a id="heart" href="like/{{post.id }}"></a>
-            <p>{{post_like}}</p>
-        </div>
-        <a class="button_style_delete" href="delete/{{post.id }}" >Delete post</a>
+            <form enctype="multipart/form-data", method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <table>
+                    <p class = "visible">{{form.comment}}</p>
+                    <p class = "not-visible">{{form.post}} {{form.author}}</p>
+                    </table>
+                <div class="submit-block">
+                <div class="submit-button">
+                    <input class="button_style" type="submit" value="Added new comment">
+                </div>
+                </div>
+                </div>
+            </form>
 
-    </div>
-
-
-        {% for i in comment.values %}
-        <div class="comment">
-            <p>{{i.comment}}</p>
-{#            <p>{{i.author_id}}</p>#}
-{#        <div class="like">#}
-{#        <a id="heart" href="like_comment/{{i.id }}"></a>#}
-{#            <p>{{comment_like.3}}</p>#}
-{#        </div>#}
-        </div>
-        {% endfor %}
-
-
-    <form enctype="multipart/form-data", method="POST">
-    {% csrf_token %}
-    <div class="form-group">
-    <table>
-    <p class = "visible">{{form.comment}}</p>
-    <p class = "not-visible">{{form.post}}
-    {{form.author}}</p>
-    </table>
-        <div class="submit-block">
-        <div class="submit-button">
-          <input class="button_style" type="submit" value="Added new comment">
-        </div>
         </div>
     </div>
-    </form>
 
-
-    </div>
-
-    </div>
-
-    <a class="button_style_back" href="{% url 'new_publications' %}">Back</a>
-
+    <a class="button_style_back" href="{% url 'post_list' %}">Back</a>
 {% endblock %}

@@ -6,16 +6,21 @@
 </head>
 <body>
 
-    {% load static %}
-    <link  href="{% static 'publication.css' %}" rel="stylesheet">
-   <form action="."  method="POST" class="order-form">
-       <p>height : {{current_size.height}}, width : {{current_size.width}}</p>
-       <table><p>New height: {{form.height}}</p><p>New width: {{form.width}}</p></table>
+{% load static %}
+<link  href="{% static 'publication.css' %}" rel="stylesheet">
 
-       <table><p>Left: {{form.left}}</p><p>Upper: {{form.upper}}</p><p>Right: {{form.right}}</p><p>Lower: {{form.lower}}</p></table>
-    <p><input type="submit" value="Update value"></p>
-    {% csrf_token %}
-</form>
+   <form action="."  method="POST" class="order-form">
+       {% csrf_token %}
+       <p>height : {{current_size.height}}, width : {{current_size.width}}</p>
+        <table>
+            <p>New height: {{form.height}}</p><p>New width: {{form.width}}</p>
+        </table>
+
+       <table>
+           <p>Left: {{form.left}}</p><p>Upper: {{form.upper}}</p><p>Right: {{form.right}}</p><p>Lower: {{form.lower}}</p>
+       </table>
+        <p><input type="submit" value="Update value"></p>
+    </form>
 
 <a class="button_style_back" href="{% url 'upload_image' %}">Back</a>
 </body>

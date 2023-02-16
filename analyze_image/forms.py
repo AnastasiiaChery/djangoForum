@@ -2,6 +2,13 @@ from django import forms
 
 from analyze_image.models import ImageAnalyze
 
+choises =(("blue", "Blue"),
+    ("yellow", "Yellow"),
+    ("green", "Green"),
+    ("warm", "Warm"),
+    ("pink", "Pink"),
+    ("dark", "Dark"),
+)
 
 class ImageForm(forms.ModelForm):
 
@@ -23,17 +30,6 @@ class ImageUpdateSize(forms.Form):
     right = forms.IntegerField(required= False)
     lower = forms.IntegerField(required= False)
 
-
-
-
-choises =(
-    ("blue", "Blue"),
-    ("yellow", "Yellow"),
-    ("green", "Green"),
-    ("warm", "Warm"),
-    ("pink", "Pink"),
-    ("dark", "Dark"),
-)
 
 class ImageUpdateColor(forms.Form):
     color = forms.ChoiceField(choices=choises)

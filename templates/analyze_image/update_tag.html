@@ -6,12 +6,15 @@
 </head>
 <body>
 
-    {% load static %}
-    <link  href="{% static 'publication.css' %}" rel="stylesheet">
-{#    <h1>{{ data}}</h1>#}
+{% load static %}
+
+<link  href="{% static 'publication.css' %}" rel="stylesheet">
+
    <form action="."  method="POST" class="order-form">
-       <table><p>{{data_info.field}}: {{form.info_image}}</p></table>
-    <p><input type="submit" value="Update value"></p>
+       <table>
+           <p>{{data_info.field}}: {{form.info_image}}</p>
+       </table>
+           <p><input type="submit" value="Update value"></p>
     {% csrf_token %}
 </form>
 

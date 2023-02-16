@@ -18,6 +18,7 @@ def upload_image(request):
 
     return render(request, "analyze_image/prew_images.html", {"images": images, 'form': form})
 
+
 def image_detail(request, number):
     image = ImageAnalyze.objects.get(id = number)
     image_info = Image.open(image.image)
@@ -58,7 +59,6 @@ def update_tag(number, tag_name, new_data):
 
     exif[key_tag] = new_data
     image_info.save(f'{image.image}', exif=exif)
-
 
 
 def remove_tag(request, number, tag_name):
@@ -102,7 +102,7 @@ def update_size(request, number):
 
         (left, upper, right, lower) = (request.POST.get('left'), request.POST.get('upper'), request.POST.get('right'), request.POST.get('lower'))
         (width, height) = (request.POST.get('width'), request.POST.get('height'))
-        print((left, upper, right, lower))
+
         try:
             image = image.crop((int(left), int(upper), int(right), int(lower)))
             image.save(f'{image_obj.image}')

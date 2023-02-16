@@ -84,9 +84,6 @@ img {
 
 }
 
-/*.contain {*/
-/*  object-fit: contain;*/
-/*}*/
 
 @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {
@@ -147,11 +144,6 @@ img {
     margin-left: 40%;
     width: 60%;
     flex-direction: column
-    /*text-align: center;*/
-    /*display: */
-   /*margin-bottom: 20px;*/
-   /*!*padding: 10px;*!*/
-   /*padding: 30%;*/
 
 }
 .form-group input, .form-group label, .form-group textarea {
@@ -205,12 +197,6 @@ img {
     visibility: hidden;
 }
 
-/*.visible{*/
-
-/*    border-color: #625b5b;*/
-/*    border-style: solid;*/
-
-/*}*/
 
 .image_block{
     height: 600px;
@@ -255,12 +241,6 @@ img {
 
 }
 
-
-/*.description_block{*/
-/*    display: table;*/
-/*    !*display: flex;*!*/
-
-/*}*/
 
 .button_block{
     display: flex;

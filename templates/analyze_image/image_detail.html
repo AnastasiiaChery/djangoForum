@@ -5,40 +5,36 @@
     <title>Title</title>
 </head>
 <body>
-    {% load static %}
-    <link  href="{% static 'publication.css' %}" rel="stylesheet">
+
+{% load static %}
+<link  href="{% static 'publication.css' %}" rel="stylesheet">
+
     <div class="card-detail">
+        <div class="full_block">
+            <div class = "publication">
+                <p class = "image_block"><img  class = "photo" src={% static image_detail.image %} alt="Photo", class="img-responsive"></p>
 
-    <div class="full_block">
-    <div class = "publication">
+                <div class = "description_block">
+                    <div class = "button_block">
+                        <a class="button_style_back" href="./delete/{{image_detail.pk}}" >Delete image</a>
+                        <a class="button_style_back" href="./update_size/{{image_detail.pk}}/" >Resize image</a>
+                        <a class="button_style_back" href="./update_color/{{image_detail.pk}}/" >Change of colour profile</a>
+                    </div>
 
-        <p class = "image_block"><img  class = "photo" src={% static image_detail.image %} alt="Photo", class="img-responsive"></p>
-
-    <div class = "description_block">
-    <div class = "button_block">
-        <a class="button_style_back" href="./delete/{{image_detail.pk}}" >Delete image</a>
-        <a class="button_style_back" href="./update_size/{{image_detail.pk}}/" >Resize image</a>
-        <a class="button_style_back" href="./update_color/{{image_detail.pk}}/" >Change of colour profile</a>
-    </div>
-
-        <form enctype="multipart/form-data", method="POST">
-        {% csrf_token %}
-            <div class="form-group">
-                <table>
-                {% for key, value in detail.items %}
-                    <p>{{key }}: {{ value }} <a class = "button_style_tag" href="./update_tag/{{image_detail.pk}}{{key}}/" > Update tag</a>
-                        <a  class = "button_style_tag" href="./remove_tag/{{image_detail.pk}}{{key}}/" >   Remove tag</a></p>
-
-                {% endfor %}
-                </table>
-
+                    <form enctype="multipart/form-data", method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <table>
+                            {% for key, value in detail.items %}
+                                <p>{{key }}: {{ value }} <a class = "button_style_tag" href="./update_tag/{{image_detail.pk}}{{key}}/" > Update tag</a>
+                                <a  class = "button_style_tag" href="./remove_tag/{{image_detail.pk}}{{key}}/" >   Remove tag</a></p>
+                            {% endfor %}
+                            </table>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-
-    </div>
-
-    </div>
-    </div>
+         </div>
     </div>
     <a class="button_style_back" href="{% url 'upload_image' %}">Back</a>
 </body>

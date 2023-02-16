@@ -6,15 +6,20 @@
 </head>
 <body>
 
-    {% load static %}
-    <link  href="{% static 'publication.css' %}" rel="stylesheet">
+{% load static %}
+<link  href="{% static 'publication.css' %}" rel="stylesheet">
+
     <p>{{image}}</p>
-   <form action="."  method="POST" class="order-form">
-       <table><p>Color profile:</p>
-           <p>Color:{{form.color}}</p></table>
-    <p><input type="submit" value="Update value"></p>
-    {% csrf_token %}
-</form>
-<a class="button_style_back" href="{% url 'upload_image' %}">Back</a>
+    <form action="."  method="POST" class="order-form">
+        {% csrf_token %}
+        <table>
+           <p>Color profile:</p>
+           <p>Color:{{form.color}}</p>
+        </table>
+        <p><input type="submit" value="Update value"></p>
+
+    </form>
+
+    <a class="button_style_back" href="{% url 'upload_image' %}">Back</a>
 </body>
 </html>

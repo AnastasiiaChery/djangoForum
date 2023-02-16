@@ -5,23 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-    {% load static %}
-    <link  href="{% static 'publication.css' %}" rel="stylesheet">
+{% load static %}
+<link  href="{% static 'publication.css' %}" rel="stylesheet">
 
-<form enctype="multipart/form-data", method="POST">
-    {% csrf_token %}
-<div class="form-group">
-    <table>
-
-        <p>Image:  {{form.image}}</p>
-
-    </table>
-        <div class="submit-block">
-        <div class="submit-button">
-          <input class="button_style" type="submit" value="Analyze image">
+    <form enctype="multipart/form-data", method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <table>
+                <p>Image:  {{form.image}}</p>
+            </table>
+            <div class="submit-block">
+                <div class="submit-button">
+                    <input class="button_style" type="submit" value="Analyze image">
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
     </form>
+
 </body>
 </html>
