@@ -75,7 +75,6 @@ def like_comment(request, number):
 def add_publication(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
-        # print(form)
         if form.is_valid():
             form.save()
             return redirect('/')

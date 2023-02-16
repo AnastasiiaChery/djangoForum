@@ -13,21 +13,29 @@
     <div class = "publication">
 
         <p class = "image_block"><img  class = "photo" src={% static image_detail.image %} alt="Photo", class="img-responsive"></p>
-        <a class="button_style_delete" href="./delete/{{image.id }}" >Delete image</a>
 
+    <div class = "description_block">
+    <div class = "button_block">
+        <a class="button_style_back" href="./delete/{{image_detail.pk}}" >Delete image</a>
+        <a class="button_style_back" href="./update_size/{{image_detail.pk}}/" >Resize image</a>
+        <a class="button_style_back" href="./update_color/{{image_detail.pk}}/" >Change of colour profile</a>
+    </div>
 
-    <form enctype="multipart/form-data", method="POST">
-    {% csrf_token %}
-        <div class="form-group">
-            <table>
-            {% for key, value in detail.items %}
-                <p>{{key }} : {{ value }}</p>
-            {% endfor %}
+        <form enctype="multipart/form-data", method="POST">
+        {% csrf_token %}
+            <div class="form-group">
+                <table>
+                {% for key, value in detail.items %}
+                    <p>{{key }}: {{ value }} <a class = "button_style_tag" href="./update_tag/{{image_detail.pk}}{{key}}/" > Update tag</a>
+                        <a  class = "button_style_tag" href="./remove_tag/{{image_detail.pk}}{{key}}/" >   Remove tag</a></p>
 
-        </table>
+                {% endfor %}
+                </table>
 
-        </div>
-    </form>
+            </div>
+        </form>
+
+    </div>
 
     </div>
     </div>

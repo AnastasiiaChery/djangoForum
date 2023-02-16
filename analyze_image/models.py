@@ -3,3 +3,4 @@ class ImageAnalyze(models.Model):
     image = models.ImageField(upload_to='images/')
 
 
+# class ChangeImage(models.Model):

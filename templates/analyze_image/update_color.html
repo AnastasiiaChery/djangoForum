@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% load static %}
+    <link  href="{% static 'publication.css' %}" rel="stylesheet">
+    <p>{{image}}</p>
+   <form action="."  method="POST" class="order-form">
+       <table><p>Color profile:</p>
+           <p>Color:{{form.color}}</p></table>
+    <p><input type="submit" value="Update value"></p>
+    {% csrf_token %}
+</form>
+<a class="button_style_back" href="{% url 'upload_image' %}">Back</a>
+</body>
+</html>
