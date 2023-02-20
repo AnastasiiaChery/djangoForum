@@ -74,7 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djangoForum.wsgi.application'
 
-LOGIN_REDIRECT_URL = 'new_publications'
+LOGIN_REDIRECT_URL = 'post_list'
 LOGOUT_REDIRECT_URL = "login"
 
 # Database

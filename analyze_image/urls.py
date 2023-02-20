@@ -19,7 +19,7 @@ from . import views
 urlpatterns = [
     path('', views.upload_image, name = "upload_image"),
     path('detail/<int:number>', views.image_detail, name = "image_detail"),
-    path('detail/delete/<int:number>', views.delete_image, name="new_publications"),
+    path('detail/delete/<int:number>', views.delete_image, name="remove_image"),
     path('detail/update_size/<int:number>/', views.update_size, name="update_size"),
     path('detail/update_color/<int:number>/', views.update_color, name="update_color"),
     path('detail/remove_tag/<int:number><str:tag_name>/', views.remove_tag, name="update_tag"),

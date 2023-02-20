@@ -28,9 +28,9 @@ urlpatterns = [
 
     path('filtered_post/<str:string>', views.get_publications_topic, name="post_filter"),
 
-    path('filtered_post/post/<int:number>', views.find_publication, name="new_publications"),
-    path('filtered_post/post/delete/<int:number>', views.find_publication, name="post_delete"),
-    path('filtered_post/post/like/<int:number>', views.like_publication, name="post_like"),
+    path('filtered_post/post/<int:number>', views.find_publication, name="new_publications_filt"),
+    path('filtered_post/post/delete/<int:number>', views.find_publication, name="post_delete_filt"),
+    path('filtered_post/post/like/<int:number>', views.like_publication, name="post_like_filt"),
 
     path('added/', views.add_publication, name="new_page")
 
