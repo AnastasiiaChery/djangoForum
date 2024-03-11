@@ -25,7 +25,7 @@ SECRET_KEY = '4qy9ku5!3##p0ceiq@zexl)es(_gtd6v#d8c#(a27fh36@oyg='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,8 +85,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'forum_db',
         'USER': 'admin',
-        'PASSWORD': 'admin1234@',
-        'HOST': 'localhost',
+        'PASSWORD': 'password',
+        'HOST': 'db',
         'PORT': '3306',
     }
 }
@@ -133,3 +133,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR),
 
 )
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
